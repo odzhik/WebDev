@@ -1,0 +1,12 @@
+.Categories{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: left;
+}
+
+.Categories > p{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
