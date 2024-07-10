@@ -1,0 +1,37 @@
+<header class="navigation">
+    <nav class="search-cart-fav-account">
+        <div class="search__wrapper">
+            <div class="brand-name" [routerLink]="['/']">NibWib</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="Enter search query">
+                <button (click)="search()" class="search-button">Search</button>
+            </div>
+        </div>
+        
+        <div class="icon-group">
+            <button class="icon-button" aria-label="Cart" [routerLink]="['/cart']">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="icon-label">Cart</div>
+            </button>
+            <button class="icon-button" aria-label="Favorites" [routerLink]="['/favorites']">
+                <i class="fas fa-heart"></i>
+                <div class="icon-label">Favorites</div>
+            </button>
+            <button class="icon-button" aria-label="Account" [routerLink]="['/profile']">
+                <i class="fas fa-user"></i>
+                <div class="icon-label">Account</div>
+            </button>
+        </div>
+    </nav>
+</header> 
+
+<div *ngIf="showSearchResults" class="search-results">
+    <h3>Search Results:</h3>
+    <ul>
+        <li *ngFor="let product of searchResults | async">
+            <div>
+                <a [routerLink]="['/products', product.id]" (click)="navigateToProduct(product.id)">{{ product.name }}</a>
+            </div>
+        </li>
+    </ul>
+</div>

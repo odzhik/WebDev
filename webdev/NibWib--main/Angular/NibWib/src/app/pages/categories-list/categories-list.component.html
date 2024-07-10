@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Categories:</h1>
+  <ul class="category-list">
+    <li *ngFor="let category of categories">
+      <div class="category">
+        <button (click)="toggleCategory(category)" class="category-button">{{ category.name }}</button>
+      </div>
+    </li>
+  </ul>
+</div>
